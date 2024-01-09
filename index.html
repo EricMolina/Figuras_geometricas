@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="js\jquery-3.7.1.slim.min.js"></script>
+
+    <script src="js\bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css\bootstrap.min.css">
+
+    <script src="js\sweetalert2.all.min.js"></script>
+    <link href="css\sweetalert2.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/main.js"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- formulario que el usuario introduzca un tipo de figura (triangulo, cuadrado). Calcularemos su área y perímetro.
+    
+    al hacer click, rederigiremos a otra página que pedirá al usuario el largo del lado / los lados, según la figura-->
+
+    Selecciona una figura:
+    <select name="figuras" id="figuras">
+        <option value="0" selected disabled>Selecciona una figura...</option>
+        <option value="triangulo">Triangulo</option>
+        <option value="rectangulo">Rectangulo</option>
+        <option value="cuadrado">Cuadrado</option>
+        <option value="circulo">Circulo</option>    
+    </select>
+
+    <br><br><br>
+    <label id="lado1_" for="lado1">Lado 1: </label><input type="number" name="lado1" id="lado1">
+    <br>
+    <label id="lado2_" for="lado2">Lado 2: </label><input type="number" name="lado2" id="lado2">
+    <br>
+    <input type="submit" name="submit" id="submit" value="submit">
+
+    <br><br><br>
+    <div id="result_container" style="display: none">
+        <button name="clear" id="clear" value="clear">clear</button>
+        <br><br>
+        <div id="result">
+            <p>Tipo figura:</p>
+            <p>Área:</p>
+            <p>Perímetro:</p>
+        </div>
+    </div>
+
+    <div id="figuras_container">
+        <div>
+            <div id="figuras_titulo">
+                <p>SELECCIONA LA FIGURA</p>
+            </div>
+            <div id="figuras_figura">
+                <img src="./img/triangulo.png" alt="triangulo">
+            </div>
+            <div id="figuras_figura">
+                <img src="./img/rectangulo.png" alt="rectangulo">
+            </div>
+            <div id="figuras_figura">
+                <img src="./img/cuadrado.png" alt="cuadrado">
+            </div>
+            <div id="figuras_figura">
+                <img src="./img/circulo.png" alt="circulo">
+            </div>
+        </div>
+    </div>
+
+    <div id="lados_container">
+        <div>
+
+        </div>
+    </div>
+
+    <div id="resultado_container">
+        <div>
+
+        </div>
+    </div>
+
+    <div id="top_fade"></div>
+    <div id="bottom_fade"></div>
+</body>
+
+</html>
