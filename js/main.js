@@ -1,7 +1,5 @@
 // ERIC MOLINA MOLINA - DAW 2
 
-const desplegableID = "figuras";
-const submitID = "submit";
 const figuras = {
     "triangulo": 2,
     "rectangulo": 2,
@@ -10,17 +8,19 @@ const figuras = {
 }
 
 window.onload = function () {
-    document.getElementById(desplegableID).onchange = CargarLadosForm;
-    document.getElementById(submitID).onclick = CargarFigura;
+    document.getElementById("submit").onclick = CargarFigura;
     document.getElementById("clear").onclick = ClearFigura;
 }
 
-function CargarLadosForm() {
-    const desplegable = document.getElementById(desplegableID);
+function CargarLadosForm(figura) {
+    figuras_container.style.display = "none";
+    lados_container.style.display = "inline-block";
+
     lado1.style.display = "inline-block";
     lado1_.style.display = "inline-block";
-    lado2.style.display = figuras[desplegable.value] == 2 ? "inline-block" : "none";
-    lado2_.style.display = figuras[desplegable.value] == 2 ? "inline-block" : "none";
+    lado2.style.display = figuras[figura] == 2 ? "inline-block" : "none";
+    lado2_.style.display = figuras[figura] == 2 ? "inline-block" : "none";
+    document.getElementsByClassName("lados_margin")[0].style.display = figuras[figura] == 2 ? "none" : "inline-block";
 }
 
 function CargarFigura() {

@@ -19,11 +19,7 @@
     <title>Document</title>
 </head>
 
-<body>
-    <!-- formulario que el usuario introduzca un tipo de figura (triangulo, cuadrado). Calcularemos su área y perímetro.
-    
-    al hacer click, rederigiremos a otra página que pedirá al usuario el largo del lado / los lados, según la figura-->
-
+<body>    
     Selecciona una figura:
     <select name="figuras" id="figuras">
         <option value="0" selected disabled>Selecciona una figura...</option>
@@ -33,11 +29,6 @@
         <option value="circulo">Circulo</option>    
     </select>
 
-    <br><br><br>
-    <label id="lado1_" for="lado1">Lado 1: </label><input type="number" name="lado1" id="lado1">
-    <br>
-    <label id="lado2_" for="lado2">Lado 2: </label><input type="number" name="lado2" id="lado2">
-    <br>
     <input type="submit" name="submit" id="submit" value="submit">
 
     <br><br><br>
@@ -54,18 +45,19 @@
     <div id="figuras_container">
         <div>
             <div id="figuras_titulo">
-                <p>SELECCIONA LA FIGURA</p>
+                <p class="titulo_1">SELECCIONA LA FIGURA</p>
+                <p class="titulo_2">SELECCIONA<br>LA FIGURA</p>
             </div>
-            <div id="figuras_figura">
+            <div class="figuras_figura" onclick="CargarLadosForm('triangulo')">
                 <img src="./img/triangulo.png" alt="triangulo">
             </div>
-            <div id="figuras_figura">
+            <div class="figuras_figura" onclick="CargarLadosForm('rectangulo')">
                 <img src="./img/rectangulo.png" alt="rectangulo">
             </div>
-            <div id="figuras_figura">
+            <div class="figuras_figura" onclick="CargarLadosForm('cuadrado')">
                 <img src="./img/cuadrado.png" alt="cuadrado">
             </div>
-            <div id="figuras_figura">
+            <div class="figuras_figura" onclick="CargarLadosForm('circulo')">
                 <img src="./img/circulo.png" alt="circulo">
             </div>
         </div>
@@ -73,13 +65,42 @@
 
     <div id="lados_container">
         <div>
-
+            <div id="lados_titulo">
+                <button class="titulo_1" type="button">CALCULA LA FIGURA</button>
+                <button class="titulo_2" type="button">CALCULA<br>LA FIGURA</button>
+            </div>
+            <div class="lados_margin"></div>
+            <div class="lados_input">
+                <label id="lado1_" for="lado1">Lado 1: </label>
+                <input type="number" name="lado1" id="lado1" min="0" max="9999999" value="0">
+            </div>
+            <div class="lados_input">
+                <label id="lado2_" for="lado2">Lado 2: </label>
+                <input type="number" name="lado2" id="lado2" min="0" max="9999999" value="0">
+            </div>
         </div>
     </div>
 
     <div id="resultado_container">
         <div>
-
+            <div id="resultado_titulo">
+                <button type="button">VOLVER</button>
+            </div>
+            <div id="resultado_figura">
+                <img src="./img/triangulo.png" alt="figura">
+            </div>
+            <div class="resultado_texto">
+                <p>Lado 1: 53.2</p>
+            </div>
+            <div class="resultado_texto">
+                <p>Lado 2: 130.53</p>
+            </div>
+            <div class="resultado_texto">
+                <p>Área: 3342</p>
+            </div>
+            <div class="resultado_texto">
+                <p>Perímetro: 43244.23</p>
+            </div>
         </div>
     </div>
 
