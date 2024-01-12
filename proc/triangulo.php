@@ -17,11 +17,18 @@ class Triangulo extends FiguraGeometrica implements PerimetroM {
     }
 
     public function Perimetro() {
-        return floatval($this -> lado1) + floatval($this -> lado2) + sqrt(floatval($this -> lado1)**2 + floatval($this -> lado2)**2);;
+        return floatval($this -> lado1) + floatval($this -> lado2) + floatval($this -> lado2);
     }
 
     public function Area() {
-        return (floatval($this -> lado1) * floatval($this -> lado2)) / 2;
+        // Calcular la altura
+        $altura = sqrt(pow(floatval($this -> lado2), 2) - pow(floatval($this -> lado1) / 2, 2));
+
+        // Calcular el área
+        $area = 0.5 * floatval($this -> lado1) * $altura;
+        if (is_nan($area))
+            return -1;
+        return $area;
     }
 
     function __toString()
